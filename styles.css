@@ -1,0 +1,54 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+.cod-search input {
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 0 15px;
+}
+
+.radio-box {
+    margin: 15px;
+}
+
+.button-search {
+    margin: 15px;
+}
+
+.button-search button {
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #111217;
+    color: #ccc;
+}
+
+#properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.property {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.property img {
+    max-width: 100%;
+}
+
+.property h2 {
+    margin-top: 0;
+}
