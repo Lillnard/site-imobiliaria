@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container-form {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-header h1 {
+    font-weight: 800;
+}
+
+.form-header h3 {
+    color: #715CF8;;
+    font-weight: 300;
+}
+
+.form-header h3 a {
+    color: #715CF8;
+    font-weight: 600;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.linha1,
+.linha2,
+.linha3,
+.linha4 {
+    display: flex;
+    gap: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    color: #362c79;
+    font-weight: 600;
+}
+
+.input-box span {
+    margin: 10px;
+}
+
+.span-active {
+    font-size: 12px;
+    color: #362c79a8;
+}
+
+.input-box input {
+    width: 250px;
+    height: 35px;
+    border-radius: 25px;
+    border: 1px solid #adadad;
+    padding: 15px;
+}
+
+.email input {
+    width: 520px;
+}
+
+.btn-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit input{
+    width: 120px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: #715CF8;
+    color: antiquewhite;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+
+    .form-header {
+        margin-top: 0;
+    }
+
+    .linha1,
+    .linha2,
+    .linha3,
+    .linha4 {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .input-box {
+        margin-top: 15px;
+    }
+
+    .input-box input {
+        width: 250px;
+        height: 45px;
+        border-radius: 25px;
+        border: 1px solid #adadad;
+        padding: 25px 10px 10px;
+    }
+
+    .email input {
+        width: 250px;
+    }
+
+    .input-box span {
+        margin: 0 0 0 10px;
+        position: absolute;
+        font-size: 12px;
+        color: #362c79a8;
+    }
+
+    
+}

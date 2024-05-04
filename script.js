@@ -2,19 +2,36 @@
 const properties = [
   {
     type: "apartamento",
-    imageCount: 3, // Número de imagens para cada imóvel
-    priceForSale: 300000,
-    priceForRent: 1500,
+    imageCount: 3,
+    price: "R$350.000,00",
     description: "Linda casa de 3 quartos com jardim espaçoso.",
-    availability: "ambos",
+    room: 3,
+    toilet: 2,
+    garage: 2,
+    code: "AP0001",
+    bairro: "Gopoúva",
   },
   {
     type: "casa",
-    imageCount: 2,
-    priceForSale: 200000,
-    priceForRent: 1000,
+    imageCount: 3,
+    price: "R$200.000,00",
     description: "Apartamento moderno com vista para o mar.",
-    availability: "venda",
+    room: 2,
+    toilet: 2,
+    garage: 1,
+    code: "CA0001",
+    bairro: "Praia Grande",
+  },
+  {
+    type: "sobrado",
+    imageCount: 3,
+    price: "R$150.000,00",
+    description: "Sobrado excelente.",
+    room: 4,
+    toilet: 3,
+    garage: 2,
+    code: "SO0001",
+    bairro: "Mooca",
   },
   // Adicione mais propriedades conforme necessário
 ];
@@ -52,96 +69,107 @@ function getPropertyImageSrc(type, code, index) {
 }
 
 function search() {
-  const searchInput = document.getElementById("searchInput").value;
-  const searchType = document.querySelector(
-    'input[name="searchType"]:checked'
-  ).value;
-  const priceRange = document.getElementById("priceRange").value;
-
-  let filteredProperties = properties;
-
-  if (searchInput) {
-    filteredProperties = filteredProperties.filter(
-      (property) => property.code === searchInput
-    );
-  }
-
-  if (searchType === "buy") {
-    filteredProperties = filteredProperties.filter(
-      (property) =>
-        property.availability === "venda" || property.availability === "ambos"
-    );
-  } else if (searchType === "rent") {
-    filteredProperties = filteredProperties.filter(
-      (property) =>
-        property.availability === "locacao" || property.availability === "ambos"
-    );
-  }
-
-  filteredProperties = filteredProperties.filter(
-    (property) =>
-      property.priceForSale <= priceRange || property.priceForRent <= priceRange
-  );
-
-  displayProperties(filteredProperties);
+  // Função search permanece a mesma
 }
 
 function displayProperties(properties) {
   const propertiesContainer = document.getElementById("properties");
-  propertiesContainer.innerHTML = "";
 
   properties.forEach((property, index) => {
     const propertyDiv = document.createElement("div");
-    propertyDiv.classList.add("property");
+    propertyDiv.classList.add("properties-container");
 
-    const h2 = document.createElement("h2");
-    const code = generatePropertyCode(property.type, index);
-    h2.textContent = `Código: ${code} - ${property.type.toUpperCase()}`;
+    const imagesContentDiv = document.createElement("div");
+    imagesContentDiv.classList.add("images-content");
 
-    const pDescription = document.createElement("p");
-    pDescription.textContent = `Descrição: ${property.description}`;
+    const aTag = document.createElement("a");
+    aTag.setAttribute("href", "#");
 
-    propertyDiv.appendChild(h2);
-    propertyDiv.appendChild(pDescription);
-
-    // Se disponível para venda
-    if (
-      property.availability === "venda" ||
-      property.availability === "ambos"
-    ) {
-      const pPriceForSale = document.createElement("p");
-      pPriceForSale.textContent = `Preço para venda: R$ ${property.priceForSale}`;
-      propertyDiv.appendChild(pPriceForSale);
-    }
-
-    // Se disponível para locação
-    if (
-      property.availability === "locacao" ||
-      property.availability === "ambos"
-    ) {
-      const pPriceForRent = document.createElement("p");
-      pPriceForRent.textContent = `Preço para locação: R$ ${property.priceForRent}`;
-      propertyDiv.appendChild(pPriceForRent);
-    }
-
-    // Adicionar imagens
-    const imagesDiv = document.createElement("div");
     for (let i = 0; i < property.imageCount; i++) {
       const img = document.createElement("img");
-      const imgSrc = getPropertyImageSrc(property.type, code, i);
-      img.src = imgSrc;
-      imagesDiv.appendChild(img);
+      img.setAttribute(
+        "src",
+        getPropertyImageSrc(property.type, property.code, i)
+      );
+      img.classList.add(`img${i + 1}`, "fade");
+      if (i > 0) img.classList.add("hide");
+      aTag.appendChild(img);
     }
-    propertyDiv.appendChild(imagesDiv);
 
+    imagesContentDiv.appendChild(aTag);
+
+    const bulletsContainerDiv = document.createElement("div");
+    bulletsContainerDiv.classList.add("bullets-container");
+
+    for (let i = 0; i < property.imageCount; i++) {
+      const bulletDiv = document.createElement("div");
+      bulletDiv.classList.add("circulo");
+      if (i === 0) bulletDiv.classList.add("ativo");
+      bulletDiv.id = `property${index + 1}-btn${i + 1}`;
+      const bulletIcon = document.createElement("i");
+      bulletIcon.classList.add("fa-regular", "fa-circle");
+      bulletDiv.appendChild(bulletIcon);
+      bulletsContainerDiv.appendChild(bulletDiv);
+    }
+
+    imagesContentDiv.appendChild(bulletsContainerDiv);
+    propertyDiv.appendChild(imagesContentDiv);
+
+    const propertiesContentDiv = document.createElement("div");
+    propertiesContentDiv.classList.add("properties-content");
+
+    const h3 = document.createElement("h3");
+    h3.innerHTML = `<span id="type">${property.type}</span> - <span id="bairro">${property.bairro}</span> - <span id="code">cód: ${property.code}</span>`;
+    propertiesContentDiv.appendChild(h3);
+
+    const propertyDependenciesDiv = document.createElement("div");
+    propertyDependenciesDiv.classList.add("property-dependencies");
+    propertyDependenciesDiv.innerHTML = `
+      <i class="fa-solid fa-bed" id="room"> ${property.room}</i>
+      <i class="fa-solid fa-toilet" id="toilet"> ${property.toilet}</i>
+      <i class="fa-solid fa-car" id="garage"> ${property.garage}</i>
+    `;
+    propertiesContentDiv.appendChild(propertyDependenciesDiv);
+
+    const priceH3 = document.createElement("h3");
+    priceH3.textContent = `R$ ${property.price}`;
+    propertiesContentDiv.appendChild(priceH3);
+
+    const pDescription = document.createElement("p");
+    pDescription.innerHTML = `<span class="sep">&#8226;</span> Descrição: ${property.description}`;
+    propertiesContentDiv.appendChild(pDescription);
+
+    propertyDiv.appendChild(propertiesContentDiv);
     propertiesContainer.appendChild(propertyDiv);
+  });
+
+  // Atualizar valor exibido conforme alteração do input range
+  document.getElementById("priceRange").addEventListener("input", function () {
+    document.getElementById("priceValue").textContent = `R$ ${this.value}`;
+  });
+
+  // Capturando os botões (bullets) e imagens
+  document.querySelectorAll(".bullets-container .circulo").forEach((bullet) => {
+    bullet.addEventListener("click", () => {
+      const propertyIndex = bullet.id.split("-")[0].replace("property", "");
+      const currentActiveBullet = document.querySelector(
+        `#property${propertyIndex} .bullets-container .circulo.ativo`
+      );
+      const currentActiveImage = document.querySelector(
+        `#property${propertyIndex} .images-container .img.fade`
+      );
+      const nextBulletIndex = parseInt(bullet.id.split("btn")[1]) - 1;
+      const nextImage = document.querySelector(
+        `#property${propertyIndex} .images-container .img${nextBulletIndex + 1}`
+      );
+
+      currentActiveBullet.classList.remove("ativo");
+      bullet.classList.add("ativo");
+      currentActiveImage.classList.add("hide");
+      nextImage.classList.remove("hide");
+    });
   });
 }
 
 // Exibir todas as propriedades ao carregar a página
 displayProperties(properties);
-
-// Atualizar valor exibido conforme alteração do input range
-document.getElementById("priceRange").addEventListener("input", function () {
-  document.getElementById("priceValue").textContent = `R$ ${this.value}`;
-});

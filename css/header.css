@@ -1,0 +1,340 @@
+html{
+    scroll-behavior: smooth;
+}
+
+:target{
+    scroll-margin-top: 65px;
+}
+
+.hide {
+    display: none;
+}
+
+header{
+    position: fixed;
+    background-color: #111217f6;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 3px #ffffff;
+    z-index: 2;
+}
+
+header.dark{
+    background-color: #e9e9e9f6;
+    box-shadow: 0px 0px 8px #000000;
+}
+
+.menu-mobile-magic{
+    display: none;
+}
+
+.logo img{
+    height: 60px;
+    width: 180px;
+}
+
+.btn-hover:hover{
+    background-image: linear-gradient(45deg, #252525, #585858);
+}
+
+
+
+/* MENU-DESKTOP */
+
+.menu-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -40px 250px;
+}
+
+.menu-desktop nav a{
+    color: #636363;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    transition: 0.2s;
+    margin: 0 50px 0;
+}
+
+.menu-desktop nav a:hover{
+    transform: scale(1.1);
+    font-weight: 600;
+}
+
+.menu-desktop nav a::after{
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg, #ffffff, #aaaaaa);
+    position: absolute;
+    top: 22px;
+    left: 0;
+    border-radius: 10px;
+    transition: width 0.5s;
+}
+
+.menu-desktop nav .menu-inicio:hover::after{
+    width: 66px;
+}
+
+.menu-desktop nav .menu-habilidades:hover::after{
+    width: 113px;
+}
+
+.menu-desktop nav .menu-projetos:hover::after{
+    width: 84px;
+}
+
+.menu-desktop nav .menu-sobre:hover::after{
+    width: 61px;
+}
+
+.menu-desktop nav .menu-faq:hover::after{
+    width: 52px;
+}
+
+.menu-desktop nav .menu-sincerao:hover::after{
+    width: 92px;
+}
+
+.menu-desktop nav a:hover::after{
+    background-image: linear-gradient(45deg, #ffffff, #aaaaaa);
+}
+
+.menu-desktop nav a.ativo{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.menu-inicio.dark.ativo,
+.menu-habilidades.dark.ativo,
+.menu-projetos.dark.ativo,
+.menu-sobre.dark.ativo,
+.menu-faq.dark.ativo,
+.menu-sincerao.dark.ativo{
+    color: #000000;
+}
+
+header.dark .menu-desktop nav a:hover::after{
+    background-image: linear-gradient(45deg, #cccccc, #000000);
+}
+
+
+.menu-desktop nav a.ativo::after{
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 66px;
+    transition: width 0.5s;
+}
+
+.menu-desktop nav .menu-inicio.ativo::after{
+    width: 66px;
+}
+
+.menu-desktop nav .menu-habilidades.ativo::after{
+    width: 113px;
+}
+
+.menu-desktop nav .menu-projetos.ativo::after{
+    width: 84px;
+}
+
+.menu-desktop nav .menu-sobre.ativo::after{
+    width: 61px;
+}
+
+.menu-desktop nav .menu-faq.ativo::after{
+    width: 52px;
+}
+
+.menu-desktop nav .menu-sincerao.ativo::after{
+    width: 92px;
+}
+
+.menu-desktop nav a i{
+    color: #636363;
+}
+
+.menu-desktop nav a.ativo i{
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* REDES SOCIAIS */
+
+
+.social{
+    display: flex;
+    justify-content: end;
+    margin-right: -150px;
+}
+
+.button button i{
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.button button:hover i{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+#gh i:hover{
+    color: #000000;
+}
+
+.button button{
+    background-color: #242424;
+    box-shadow: 0px 0px 5px #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.social button{
+    margin-right: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button button:not(:last-child){
+    margin-right: 40px;
+}
+
+header.dark button{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+header.dark button i{
+    color: #000000;
+}
+
+
+#linkedin::before{
+    background-color: #0a66c2;
+}
+
+#gh::before{
+    background-color: #ffffff;
+}
+
+#whatsapp::before{
+    background-color: #25d365;
+}
+
+#instagram::before{
+    background: linear-gradient(#6228D7, #EE2A7B, #F9CE34 );
+}
+
+.social button::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: -100;
+    top: 100%;
+    background-color: #242424e3;
+}
+
+.social button:hover::before{
+    animation: deslocamento .6s;
+    left: 0;
+    top: 0;
+}
+
+@keyframes deslocamento {
+    0%{
+        left: -100;
+        top: 100%;
+    }
+    50%{
+        left: 15%;
+        top: -25%;
+    }
+    100%{
+        left: 0;
+        top: 0;
+    }
+}
+
+
+
+/* BOTÃO MODO DARK */
+
+
+
+.dark-mode{
+    background-color: #242424;
+    box-shadow: 0px 0px 5px #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin: 0 20px 0 0;
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-mode.dark{
+    background-color: #cccccc;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+.dark-mode.dark i{
+    color: #000000;
+}
+
+.dark-mode i{
+    font-size: 16px;
+    margin-top: 7px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.dark-mode:hover i{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.dark-mode::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: -100;
+    top: 100%;
+    background-image: linear-gradient(90deg, #000000, #ffffff);
+}
+
+.dark-mode:hover::before{
+    animation: deslocamento .6s;
+    left: 0;
+    top: 0;
+}

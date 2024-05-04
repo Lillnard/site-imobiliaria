@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin: 150px auto 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.cod-search input {
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 0 15px;
+}
+
+.radio-box {
+    margin: 15px;
+}
+
+.button-search {
+    margin: 15px;
+}
+
+.button-search button {
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #111217;
+    color: #ccc;
+}
+
+#properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 2fr));
+    gap: 50px;
+    padding: 20px;
+}
+
+.property {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.property img {
+    max-width: 100%;
+}
+
+.property h2 {
+    margin-top: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.images-content img{
+    height: 360px;
+    width: 360px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px #ffffff;
+    margin: 0 auto;
+}
+
+.bullets-container{
+    display: flex;
+    justify-content: center;
+    gap:  20px;
+    margin: 10px auto;
+}
+
+.circulo{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px #ffffff;
+    cursor: pointer;
+
+}
+
+.circulo.ativo{
+    background: linear-gradient(45deg, #ff2500, #ff7100);
+}
+
+.circulo i{
+    color: #111217;
+    font-size: 20px;
+}
+
+.property-dependencies {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+@media screen and (max-width: 1200px){
+
+
+    .menu-mobile-magic{
+        display: block;
+        background-color: #111217f6;
+        box-shadow: 0px 0px 3px #ffffff;
+        bottom: 0;
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .menu-mobile-magic.dark{
+        background-color: #e9e9e9f6;
+        box-shadow: 0px 0px 8px #000000;
+    }
+
+    .menu-mobile-magic.dark span i{
+        color: #242424;
+    }
+
+
+    .menu-mobile-magic ul{
+        width: 360px;
+        display: flex;
+    }
+
+    .menu-mobile-magic ul li{
+        width: 70px;
+        height: 70px;
+        list-style: none;
+        position: relative;
+        z-index: 2;
+    }
+
+    .menu-mobile-magic ul li a{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .menu-mobile-magic ul li a .icone-menu{
+        display: block;
+        line-height: 75px;
+        font-size: 25px;
+        position: relative;
+        transition: .5s;
+    }
+
+    .menu-mobile-magic ul li a .texto-menu{
+        position: relative;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .menu-mobile-magic ul li a.ativo .icone-menu{
+        transform: translateY(-35px);
+        background-image: linear-gradient(45deg, #ff2500, #ff7100);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .menu-mobile-magic ul li a.ativo .texto-menu{
+        transform: translateY(-55px);
+        font-weight: 600;
+        opacity: 1;
+        background-image: linear-gradient(45deg, #ff2500, #ff7100);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .menu-mobile-magic ul li:hover a .icone-menu{
+        transform: translateY(-35px);
+        background-image: linear-gradient(45deg, #ff2500, #ff7100);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .menu-mobile-magic ul li:hover a .texto-menu{
+        transform: translateY(-55px);
+        font-weight: 600;
+        opacity: 1;
+        background-image: linear-gradient(45deg, #ff2500, #ff7100);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .icone-menu.dark{
+        color: #242424;
+    }
+
+    .menu-desktop{
+        display: none;
+    }
+}
