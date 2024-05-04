@@ -57,6 +57,17 @@
     font-weight: 600;
 }
 
+.input-box input[type="checkbox"] {
+    width: 15px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: -5px 0 0 15px;
+}
+
 .input-box span {
     margin: 10px;
 }
@@ -72,10 +83,6 @@
     border-radius: 25px;
     border: 1px solid #adadad;
     padding: 15px;
-}
-
-.email input {
-    width: 520px;
 }
 
 .btn-submit {
