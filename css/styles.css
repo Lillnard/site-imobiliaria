@@ -3,7 +3,11 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
+    color: antiquewhite;
+}
 
+body {
+    background-color: #111217;
 }
 
 .input-box {
@@ -19,6 +23,8 @@
     width: 250px;
     border-radius: 10px;
     padding: 0 15px;
+    border: none;
+    box-shadow: 0 0 3px antiquewhite;
 }
 
 .radio-box {
@@ -34,8 +40,11 @@
     width: 80px;
     border-radius: 10px;
     background-color: #111217;
+    border: none;
+    box-shadow: 0 0 3px antiquewhite;
     color: #ccc;
 }
+
 
 #properties {
     display: grid;
@@ -100,4 +109,29 @@
     justify-content: space-evenly;
 }
 
+@media screen and (max-width: 1200px){
 
+    #properties {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .properties-content{
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .properties-content h3 {
+        margin: 15px 0;
+        text-transform: uppercase;
+    }
+
+    #code {
+        background-image: linear-gradient(45deg, #ff2500, #ff7100);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+}

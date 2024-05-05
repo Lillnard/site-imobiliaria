@@ -3,7 +3,7 @@ const properties = [
   {
     type: "apartamento",
     imageCount: 3,
-    price: "R$350.000,00",
+    price: "350.000,00",
     description: "Linda casa de 3 quartos com jardim espaçoso.",
     room: 3,
     toilet: 2,
@@ -14,7 +14,7 @@ const properties = [
   {
     type: "casa",
     imageCount: 3,
-    price: "R$200.000,00",
+    price: "200.000,00",
     description: "Apartamento moderno com vista para o mar.",
     room: 2,
     toilet: 2,
@@ -25,7 +25,7 @@ const properties = [
   {
     type: "sobrado",
     imageCount: 3,
-    price: "R$150.000,00",
+    price: "150.000,00",
     description: "Sobrado excelente.",
     room: 4,
     toilet: 3,

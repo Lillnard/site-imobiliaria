@@ -4,6 +4,13 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: #111217;
+    color: #faebd7;
+
 }
 
 .container-form {
@@ -17,11 +24,11 @@
 
 .form-header {
     text-align: center;
-    margin-top: 50px;
 }
 
 .form-header h1 {
     font-weight: 800;
+    margin-top: 70px;
 }
 
 .form-header h3 {
@@ -43,18 +50,29 @@
 
 .linha1,
 .linha2,
-.linha3,
-.linha4 {
+.linha3 {
     display: flex;
     gap: 20px;
+}
+
+.linha2 {
+    margin-top: 30px;
+}
+
+#data, #hora {
+    color: #111217;
 }
 
 .input-box {
     display: flex;
     flex-direction: column;
     margin-top: 5px;
-    color: #362c79;
+    color: #faebd7;
     font-weight: 600;
+}
+
+#nome {
+    width: 520px;
 }
 
 .input-box input[type="checkbox"] {
@@ -83,6 +101,7 @@
     border-radius: 25px;
     border: 1px solid #adadad;
     padding: 15px;
+    color: #faebd7;
 }
 
 .btn-submit {
@@ -105,7 +124,7 @@
 @media screen and (max-width: 500px) {
 
     .form-header {
-        margin-top: 0;
+        margin-top: -60px;
     }
 
     .linha1,
@@ -116,6 +135,15 @@
         flex-direction: column;
         gap: 0;
     }
+
+    .linha2 {
+        margin-top: 0;
+    }
+    
+
+    #nome {
+        width: 250px;
+    }    
 
     .input-box {
         margin-top: 15px;
@@ -129,12 +157,9 @@
         padding: 25px 10px 10px;
     }
 
-    .email input {
-        width: 250px;
-    }
 
     .input-box span {
-        margin: 0 0 0 10px;
+        margin: 5px 0 0 15px;
         position: absolute;
         font-size: 12px;
         color: #362c79a8;
