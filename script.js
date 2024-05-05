@@ -173,3 +173,10 @@ function displayProperties(properties) {
 
 // Exibir todas as propriedades ao carregar a página
 displayProperties(properties);
+
+let showMoreBtn = document.querySelector(".show-more-btn");
+let showMoreContent = document.querySelector(".show-more-content");
+
+showMoreBtn.addEventListener("click", () => {
+  showMoreContent.classList.toggle("active");
+});

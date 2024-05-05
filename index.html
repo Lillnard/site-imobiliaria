@@ -105,30 +105,73 @@
     <div class="input-box">
         <div class="cod-search">
             <input type="text" id="searchInput" placeholder="Digite o código do imóvel">
-        </div>
+
+            <div class="button-search">
+                <button onclick="search()">Buscar</button>
+            </div><!-- button-search -->
+        </div><!-- cod-search -->
 
         <div class="radio-box">
             <label><input type="radio" name="searchType" value="all" checked>Quero Comprar</label>
             <label><input type="radio" name="searchType" value="buy">Quero Alugar</label>
             <label><input type="radio" name="searchType" value="rent">Ambos</label>
-        </div>
+        </div><!-- radio-box -->
 
-        <div class="price-search">
-            <label for="priceRange">Filtrar por valor:</label>
-            <input type="range" min="0" max="300000" value="0" id="priceRange">
-            <output id="priceValue">R$ 0</output>
-        </div>
+        <div class="show-more">
+            <div class="show-more-btn">Mais filtros <span><i class="fa-solid fa-chevron-down"></i></span> </div>
+
+            <div class="show-more-content" id="show-more-content">
+                <div class="search-box">
+                    <div class="sell-price">
+                        <input type="text" id="searchInput" placeholder="valor de compra desejado">
+                    </div><!-- sell-price -->
+    
+                    <div class="rent-price">
+                        <input type="text" id="searchInput" placeholder="valor de locação desejado">
+                    </div><!-- rent-price -->
+    
+                    <div class="bairro-search">
+                        <input type="text" id="searchInput" placeholder="bairro desejado">
+                    </div><!-- bairro-search -->
+    
+                    <div class="room-search">
+                        <input type="text" id="searchInput" placeholder="quartos?">
+                    </div><!-- room-search -->
+                </div><!-- search-box -->
+                
+                <div class="search-box">
+                    <div class="suite-search">
+                        <input type="text" id="searchInput" placeholder="Suíte?">
+                    </div><!-- suite-search -->
+            
+                    <div class="banheiro-search">
+                        <input type="text" id="searchInput" placeholder="banheiros ?">
+                    </div><!-- banheiro-search -->
+    
+                    <div class="lazer-search">
+                        <input type="text" id="searchInput" placeholder="gostaria de itens de lazer?">
+                    </div><!-- lazer--search -->
+            
+                    <div class="garage-search">
+                        <input type="text" id="searchInput" placeholder="Vagas?">
+                    </div><!-- garage-search -->
+                </div><!-- search-box -->
+
+                <div class="button-search" id="btn-show-more">
+                    <button onclick="search()">Buscar</button>
+                </div><!-- button-search -->
+    
         
-        <div class="button-search">
-            <button onclick="search()">Buscar</button>
-        </div>
-    </div>    
+            </div><!-- show-more-contet -->
+        </div><!-- show-more -->
+        
+    </div><!-- input-box -->    
 
     <div class="properties-container">
         <div id="properties">
             <!-- Propriedades serão adicionadas aqui -->
-        </div>
-    </div>
+        </div><!-- properties-->
+    </div><!-- properties-container -->
     <script src="script.js"></script>
 </body>
 </html>
