@@ -49,7 +49,7 @@ body {
     color: #ccc;
 }
 
-.show-more-btn{
+.show-more-btn {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -81,21 +81,34 @@ body {
     width: 250px;
 }
 
-.show-more-content{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease;
-}
-
-.show-more-btn.active .show-more-content{
-    max-height: 400px;
-}
-
-.show-more-btn.active i{
+.show-more-btn.ativo span i {
     transform: rotate(180deg);
 }
 
 
+select {
+    color: #111217;
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 0 15px;
+    border: none;
+    box-shadow: 0 0 3px antiquewhite;
+}
+
+option {
+    color: #111217;
+    border-radius: 30px;
+}
+
+option:hover {
+    background-color: #f50505; /* Cor de fundo ao passar o mouse */
+}
+
+option:focus {
+    background-color: #ddd; /* Cor de fundo quando em foco */
+    outline: none; /* Remover contorno */
+}
 
 #properties {
     display: grid;

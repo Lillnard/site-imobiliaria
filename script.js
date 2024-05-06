@@ -143,11 +143,6 @@ function displayProperties(properties) {
     propertiesContainer.appendChild(propertyDiv);
   });
 
-  // Atualizar valor exibido conforme alteração do input range
-  document.getElementById("priceRange").addEventListener("input", function () {
-    document.getElementById("priceValue").textContent = `R$ ${this.value}`;
-  });
-
   // Capturando os botões (bullets) e imagens
   document.querySelectorAll(".bullets-container .circulo").forEach((bullet) => {
     bullet.addEventListener("click", () => {
@@ -174,9 +169,11 @@ function displayProperties(properties) {
 // Exibir todas as propriedades ao carregar a página
 displayProperties(properties);
 
+// funão para exibir mais itens de pesquisa
 let showMoreBtn = document.querySelector(".show-more-btn");
 let showMoreContent = document.querySelector(".show-more-content");
 
 showMoreBtn.addEventListener("click", () => {
-  showMoreContent.classList.toggle("active");
+  showMoreContent.classList.toggle("hide");
+  showMoreBtn.classList.toggle("ativo");
 });

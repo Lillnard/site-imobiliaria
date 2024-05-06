@@ -118,12 +118,18 @@
         </div><!-- radio-box -->
 
         <div class="show-more">
-            <div class="show-more-btn">Mais filtros <span><i class="fa-solid fa-chevron-down"></i></span> </div>
+            <div class="show-more-btn">Filtros detalhados <span><i class="fa-solid fa-chevron-down"></i></span> </div>
 
-            <div class="show-more-content" id="show-more-content">
-                <div class="search-box">
+            <div class="show-more-content hide" id="show-more-content">                
+                <div class="search-box ">
                     <div class="sell-price">
-                        <input type="text" id="searchInput" placeholder="valor de compra desejado">
+                        <select name="venda" id="filtro-venda">
+                            <option value="valor1" aria-placeholder="Valor de venda">Quer pagar quanto</option>
+                            <option value="valor2">Até R$250.000,00</option>
+                            <option value="valor3"></option>
+                            <option value="valor4"></option>
+                            <option value="valor5"></option>
+                        </select>
                     </div><!-- sell-price -->
     
                     <div class="rent-price">
