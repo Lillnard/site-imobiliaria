@@ -173,6 +173,22 @@ option:focus {
     justify-content: space-evenly;
 }
 
+.fade {
+    animation: fade 1.2s ease-in-out;
+}
+
+@keyframes fade{
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
 @media screen and (max-width: 1200px){
 
     #properties {
@@ -198,4 +214,23 @@ option:focus {
         -webkit-text-fill-color: transparent;
 
     }
+
+    .search-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .search-box input {
+        width: 120px;
+    }
+
+    .search-box select {
+        width: 120px;
+    }
+
+    option {
+        width: 100%;
+    }
+    
 }
