@@ -28,9 +28,9 @@
 
             <div class="menu-desktop">
                 <nav>
-                    <a href="index.html" class="ativo js menu-inicio" ><i class="fa-solid fa-house-chimney"></i> Inicio</a>
+                    <a href="index.html" target="_blank" class="ativo js menu-inicio" ><i class="fa-solid fa-house-chimney"></i> Inicio</a>
 
-                    <a href="agendamento.html" class="js menu-habilidades"><i class="fa-solid fa-calendar-days"></i> Agendar visita</a>
+                    <a href="agendamento.html" target="_blank" class="js menu-habilidades"><i class="fa-solid fa-calendar-days"></i> Agendar visita</a>
 
                     <a href="#sobre" class="js menu-sobre"><i class="fa-solid fa-id-badge"></i> Sobre</a>
 
@@ -111,24 +111,26 @@
             </div><!-- button-search -->
         </div><!-- cod-search -->
 
-        <div class="radio-box">
-            <label><input type="radio" name="searchType" value="all" checked>Quero Comprar</label>
-            <label><input type="radio" name="searchType" value="buy">Quero Alugar</label>
-            <label><input type="radio" name="searchType" value="rent">Ambos</label>
-        </div><!-- radio-box -->
+        <div class="button-box">
+            <button>Quero Comprar</button>
+            <button>Quero Alugar</button>
+            <button>Quero ver tudo</button>
+        </div><!-- button-box -->
 
         <div class="show-more">
-            <div class="show-more-btn">Filtros detalhados <span><i class="fa-solid fa-chevron-down"></i></span> </div>
+            <p class="show-more-btn">Filtros detalhados <i class="fa-solid fa-chevron-down"></i></p>
 
             <div class="show-more-content hide fade " id="show-more-content">                
                 <div class="search-box ">
                     <div class="sell-price">
                         <select name="venda" id="filtro-venda">
                             <option value="valor1" aria-placeholder="Valor de venda">Quer pagar quanto</option>
-                            <option value="valor2">Até R$250.000,00</option>
-                            <option value="valor3"></option>
-                            <option value="valor4"></option>
-                            <option value="valor5"></option>
+                            <option value="valor2">Até R$250 mil</option>
+                            <option value="valor3">De R$250 até R$350 mil</option>
+                            <option value="valor4">De R$350 até R$500 mil</option>
+                            <option value="valor5">De R$500 até R$700 mil mil</option>
+                            <option value="valor5">De R$500 até R$700 mil mil</option>
+                            <option value="valor5">Acima de R$700 mil</option>
                         </select>
                     </div><!-- sell-price -->
     

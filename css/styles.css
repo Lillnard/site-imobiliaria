@@ -31,8 +31,26 @@ body {
     box-shadow: 0 0 3px antiquewhite;
 }
 
-.radio-box {
+.button-box {
     margin: 15px;
+}
+
+.button-box button {
+    margin: 5px;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #111217;
+    border: none;
+    box-shadow: 0 0 3px antiquewhite;
+    color: #ccc;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button-box button:hover {
+    background: linear-gradient(45deg, #ff2500, #ff7100);
+    box-shadow: 0 0 8px antiquewhite;
 }
 
 .button-search {
@@ -47,6 +65,13 @@ body {
     border: none;
     box-shadow: 0 0 3px antiquewhite;
     color: #ccc;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button-search button:hover {
+    box-shadow: 0 0 8px antiquewhite;
+
 }
 
 .show-more-btn {
@@ -54,6 +79,12 @@ body {
     justify-content: center;
     margin-bottom: 20px;
     gap: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.show-more-btn:hover {
+    transform: scale(1.05);
 }
 
 .search-box {
@@ -81,8 +112,13 @@ body {
     width: 250px;
 }
 
-.show-more-btn.ativo span i {
+.show-more-btn.ativo i {
     transform: rotate(180deg);
+}
+
+.show-more-btn.ativo{
+    width: 143px;
+    margin: 0 auto 15px;
 }
 
 

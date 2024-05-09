@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Imóvel</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Você pode adicionar mais estilos conforme necessário -->
+</head>
+<body>
+
+    <header>
+        <!-- Seu cabeçalho aqui, se necessário -->
+    </header>
+
+    <main>
+        <div class="property-details">
+            <div class="property-images" id="property-images">
+                <!-- As imagens do imóvel serão carregadas aqui -->
+            </div>
+
+            <div class="property-info">
+                <!-- Detalhes do imóvel serão carregados aqui -->
+            </div>
+        </div>
+
+        <div class="container-form">
+            <!-- Formulário de agendamento de visita aqui -->
+        </div>
+    </main>
+
+    <footer>
+        <!-- Seu rodapé aqui, se necessário -->
+    </footer>
+
+    <script>
+        window.onload = function() {
+            // Extrair o código do imóvel da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+
+            // Carregar as imagens correspondentes com base no código do imóvel
+            const propertyImagesDiv = document.getElementById('property-images');
+            for (let i = 1; i <= 3; i++) { // Supondo que você tenha 3 imagens por imóvel
+                const img = document.createElement('img');
+                img.src = `imagens/${code}/${code} (${i}).jpg`; // Substitua pelo caminho correto das imagens
+                propertyImagesDiv.appendChild(img);
+            }
+        };
+    </script>
+
+</body>
+</html>

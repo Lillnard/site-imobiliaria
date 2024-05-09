@@ -36,40 +36,8 @@ const properties = [
   // Adicione mais propriedades conforme necessário
 ];
 
-function generatePropertyCode(type, index) {
-  let code = "";
-  switch (type) {
-    case "apartamento":
-      code = "AP";
-      break;
-    case "casa":
-      code = "CA";
-      break;
-    case "sobrado":
-      code = "SO";
-      break;
-    case "galpao":
-      code = "GA";
-      break;
-    case "salao":
-      code = "SA";
-      break;
-    case "terreno":
-      code = "TE";
-      break;
-    default:
-      code = "OT"; // Outros tipos
-  }
-  const paddedIndex = String(index + 1).padStart(4, "0");
-  return code + paddedIndex;
-}
-
 function getPropertyImageSrc(type, code, index) {
   return `imagens/${type}/${code}/${code} (${index + 1}).jpg`;
-}
-
-function search() {
-  // Função search permanece a mesma
 }
 
 function displayProperties(properties) {
@@ -83,7 +51,7 @@ function displayProperties(properties) {
     imagesContentDiv.classList.add("images-content");
 
     const aTag = document.createElement("a");
-    aTag.setAttribute("href", "#");
+    aTag.setAttribute("href", `detalhesImovel.html?code=${property.code}`);
 
     for (let i = 0; i < property.imageCount; i++) {
       const img = document.createElement("img");
